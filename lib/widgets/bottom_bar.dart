@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:insttergram/routes/home.dart';
 import 'package:insttergram/routes/messages.dart';
 import 'package:insttergram/routes/notifications.dart';
+import 'package:insttergram/routes/profile.dart';
 import 'package:insttergram/routes/search.dart';
 
 class BottomBar extends StatelessWidget {
@@ -42,7 +43,7 @@ class BottomBar extends StatelessWidget {
     const SearchRoute(),
     const DMRoute(),
     const NotifRoute(),
-    const Scaffold(),
+    const ProfileRoutes(),
   ];
 
   @override
