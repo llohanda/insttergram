@@ -16,23 +16,32 @@ class ProfileRoutes extends StatelessWidget {
         centerTitle: false,
         actions: [
           IconButton(
-            onPressed:
-                () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const NewPostRoute()),
-                ),
+            onPressed: () {
+              logger('New post');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const NewPostRoute()),
+              );
+            },
             icon: Icon(Icons.add_box_outlined, size: topIconSize),
           ),
-          IconButton(
-            onPressed:
-                () => Navigator.push(
+          Badge(
+            isLabelVisible: badgeSettings,
+            alignment: Alignment(0.7, -0.7),
+            child: IconButton(
+              onPressed: () {
+                badgeSettings = false;
+                logger('Settings');
+                Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const SettingsRoute(),
                   ),
-                ),
-            tooltip: 'Pengaturan',
-            icon: Icon(Icons.menu, size: topIconSize),
+                );
+              },
+              tooltip: 'Pengaturan',
+              icon: Icon(Icons.menu, size: topIconSize),
+            ),
           ),
         ],
       ),

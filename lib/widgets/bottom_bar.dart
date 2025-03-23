@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:insttergram/main.dart';
 import 'package:insttergram/routes/home.dart';
 import 'package:insttergram/routes/messages.dart';
 import 'package:insttergram/routes/notifications.dart';
@@ -10,7 +11,7 @@ class BottomBar extends StatelessWidget {
 
   final int selectedIndex;
   static const bottomIconSize = 36.0;
-  static const bottomDestinations = <NavigationDestination>[
+  final bottomDestinations = <NavigationDestination>[
     NavigationDestination(
       icon: Icon(Icons.home_outlined, size: bottomIconSize),
       label: 'Home',
@@ -22,17 +23,28 @@ class BottomBar extends StatelessWidget {
       tooltip: 'Pencarian',
     ),
     NavigationDestination(
-      icon: Icon(Icons.messenger_outline_rounded, size: bottomIconSize),
+      icon: Badge.count(
+        count: dmCount,
+        isLabelVisible: dmCount > 0,
+        child: Icon(Icons.messenger_outline_rounded, size: bottomIconSize),
+      ),
       label: 'Direct Message',
       tooltip: 'Pesan',
     ),
     NavigationDestination(
-      icon: Icon(Icons.favorite_border, size: bottomIconSize),
+      icon: Badge.count(
+        count: notifCount,
+        isLabelVisible: notifCount > 0,
+        child: Icon(Icons.favorite_border, size: bottomIconSize),
+      ),
       label: 'Notifications',
       tooltip: 'Notifikasi',
     ),
     NavigationDestination(
-      icon: Icon(Icons.account_circle_outlined, size: bottomIconSize),
+      icon: Badge(
+        isLabelVisible: badgeProfile,
+        child: Icon(Icons.account_circle_outlined, size: bottomIconSize),
+      ),
       label: 'Profile',
       tooltip: 'Profil',
     ),
@@ -59,7 +71,15 @@ class BottomBar extends StatelessWidget {
         selectedIndex: selectedIndex,
         onDestinationSelected: (value) {
           debugPrint('${bottomDestinations[value].label} was clicked!');
+          if (value == 2) {
+            dmCount = 0;
+          } else if (value == 3) {
+            notifCount = 0;
+          } else if (value == 4) {
+            badgeProfile = false;
+          }
           if (value != selectedIndex) {
+            logger(bottomDestinations[value].label);
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => routes[value]),
