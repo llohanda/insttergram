@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:insttergram/main.dart';
 import 'package:insttergram/routes/new_post.dart';
+import 'package:insttergram/routes/settings.dart';
 import 'package:insttergram/widgets/bottom_bar.dart';
 
 class HomeRoute extends StatefulWidget {
@@ -19,7 +20,7 @@ class _HomeRouteState extends State<HomeRoute> {
         title: Text('Instagram'),
         leading: IconButton(
           onPressed: () => debugPrint('New post clicked!'),
-          tooltip: "Post baru",
+          tooltip: 'Post baru',
           icon: IconButton(
             onPressed:
                 () => Navigator.push(
@@ -31,8 +32,14 @@ class _HomeRouteState extends State<HomeRoute> {
         ),
         actions: [
           IconButton(
-            onPressed: () => debugPrint('More clicked!'),
-            tooltip: "Menu",
+            onPressed:
+                () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SettingsRoute(),
+                  ),
+                ),
+            tooltip: 'Pengaturan',
             icon: Icon(Icons.menu, size: topIconSize),
           ),
         ],
