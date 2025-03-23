@@ -62,7 +62,10 @@ class MessageTile extends StatelessWidget {
     return ListTile(
       leading: Icon(avatar, size: 60.0),
       title: Text(username),
-      titleTextStyle: TextStyle(fontWeight: FontWeight.bold),
+      titleTextStyle: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: Theme.of(context).colorScheme.primary,
+      ),
       subtitle: Text('Sent $readableTime ago'),
       trailing: Icon(Icons.camera_alt_outlined, size: 36.0),
     );

@@ -48,7 +48,10 @@ class SettingsRoute extends StatelessWidget {
                 style: Theme.of(context).textTheme.labelMedium,
               ),
             ),
-            Container(height: 4.0, color: Colors.grey[200]),
+            Container(
+              height: 4.0,
+              color: Theme.of(context).colorScheme.onPrimary,
+            ),
             Padding(
               padding: const EdgeInsets.fromLTRB(20.0, 12.0, 0.0, 4.0),
               child: Align(

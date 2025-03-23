@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class NewPostRoute extends StatelessWidget {
   const NewPostRoute({super.key});
 
-  static const surface = Colors.black12;
+  static const surface = Colors.black87;
   static const primary = Colors.white;
 
   @override

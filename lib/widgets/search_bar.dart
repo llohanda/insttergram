@@ -15,7 +15,7 @@ class IGSearchBar extends StatelessWidget {
           prefixIcon: Icon(Icons.search),
           hintText: 'Search',
           contentPadding: EdgeInsets.zero,
-          fillColor: Colors.grey[200],
+          fillColor: Theme.of(context).colorScheme.onPrimary,
           filled: true,
         ),
       ),

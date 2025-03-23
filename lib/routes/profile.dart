@@ -97,7 +97,7 @@ class ProfileRoutes extends StatelessWidget {
                     alignment: Alignment.center,
                     padding: EdgeInsets.all(8.0),
                     decoration: BoxDecoration(
-                      color: Colors.grey[200],
+                      color: Theme.of(context).colorScheme.onPrimary,
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     child: Text(
@@ -113,7 +113,7 @@ class ProfileRoutes extends StatelessWidget {
                     alignment: Alignment.center,
                     padding: EdgeInsets.all(8.0),
                     decoration: BoxDecoration(
-                      color: Colors.grey[200],
+                      color: Theme.of(context).colorScheme.onPrimary,
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     child: Text(
@@ -126,7 +126,7 @@ class ProfileRoutes extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
-                    color: Colors.grey[200],
+                    color: Theme.of(context).colorScheme.onPrimary,
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   child: Icon(Icons.person_add_outlined, size: 20.0),
