@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:insttergram/main.dart';
+import 'package:insttergram/routes/new_post.dart';
 import 'package:insttergram/widgets/bottom_bar.dart';
 
 class HomeRoute extends StatefulWidget {
@@ -19,7 +20,14 @@ class _HomeRouteState extends State<HomeRoute> {
         leading: IconButton(
           onPressed: () => debugPrint('New post clicked!'),
           tooltip: "Post baru",
-          icon: Icon(Icons.add_box_outlined, size: topIconSize),
+          icon: IconButton(
+            onPressed:
+                () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const NewPostRoute()),
+                ),
+            icon: Icon(Icons.add_box_outlined, size: topIconSize),
+          ),
         ),
         actions: [
           IconButton(
