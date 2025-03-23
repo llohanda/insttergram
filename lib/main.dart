@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:insttergram/routes/home.dart';
 
 const topIconSize = 30.0;
+const currentUser = 'my.account';
 
 void main() {
   runApp(const MyApp());

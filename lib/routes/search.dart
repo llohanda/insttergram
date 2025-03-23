@@ -14,25 +14,35 @@ class SearchRoute extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leading: null,
-        title: SizedBox(
-          height: 40.0,
-          child: TextField(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(
-                borderRadius: const BorderRadius.all(Radius.circular(20.0)),
-              ),
-              prefixIcon: Icon(Icons.search),
-              hintText: 'Search',
-              contentPadding: EdgeInsets.zero,
-              fillColor: Colors.grey[200],
-              filled: true,
-            ),
-          ),
-        ),
+        title: IGSearchBar(),
         actions: [Icon(Icons.pin_drop_outlined, size: topIconSize)],
+        actionsPadding: EdgeInsets.symmetric(horizontal: 8.0),
       ),
       body: ExploreBody(),
       bottomNavigationBar: BottomBar(selectedIndex: 1),
+    );
+  }
+}
+
+class IGSearchBar extends StatelessWidget {
+  const IGSearchBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 40.0,
+      child: TextField(
+        decoration: InputDecoration(
+          border: OutlineInputBorder(
+            borderRadius: const BorderRadius.all(Radius.circular(20.0)),
+          ),
+          prefixIcon: Icon(Icons.search),
+          hintText: 'Search',
+          contentPadding: EdgeInsets.zero,
+          fillColor: Colors.grey[200],
+          filled: true,
+        ),
+      ),
     );
   }
 }

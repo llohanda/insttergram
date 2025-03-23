@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:insttergram/routes/home.dart';
+import 'package:insttergram/routes/messages.dart';
 import 'package:insttergram/routes/notifications.dart';
 import 'package:insttergram/routes/search.dart';
 
@@ -34,7 +35,7 @@ class BottomBar extends StatelessWidget {
   final routes = <Widget>[
     const HomeRoute(),
     const SearchRoute(),
-    const Scaffold(),
+    const DMRoute(),
     const NotifRoute(),
     const Scaffold(),
   ];
@@ -53,7 +54,6 @@ class BottomBar extends StatelessWidget {
         onDestinationSelected: (value) {
           debugPrint('${bottomDestinations[value].label} was clicked!');
           if (value != selectedIndex) {
-            selectedIndex = value;
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => routes[value]),
