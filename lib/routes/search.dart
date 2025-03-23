@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:insttergram/main.dart';
 import 'package:insttergram/widgets/bottom_bar.dart';
+import 'package:insttergram/widgets/search_bar.dart';
 
 class SearchRoute extends StatelessWidget {
   const SearchRoute({super.key});
@@ -20,29 +21,6 @@ class SearchRoute extends StatelessWidget {
       ),
       body: ExploreBody(),
       bottomNavigationBar: BottomBar(selectedIndex: 1),
-    );
-  }
-}
-
-class IGSearchBar extends StatelessWidget {
-  const IGSearchBar({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 40.0,
-      child: TextField(
-        decoration: InputDecoration(
-          border: OutlineInputBorder(
-            borderRadius: const BorderRadius.all(Radius.circular(20.0)),
-          ),
-          prefixIcon: Icon(Icons.search),
-          hintText: 'Search',
-          contentPadding: EdgeInsets.zero,
-          fillColor: Colors.grey[200],
-          filled: true,
-        ),
-      ),
     );
   }
 }

@@ -6,29 +6,34 @@ import 'package:insttergram/routes/search.dart';
 
 class BottomBar extends StatelessWidget {
   BottomBar({super.key, required this.selectedIndex});
-  int selectedIndex = 0;
 
+  final int selectedIndex;
   static const bottomIconSize = 36.0;
   static const bottomDestinations = <NavigationDestination>[
     NavigationDestination(
       icon: Icon(Icons.home_outlined, size: bottomIconSize),
       label: 'Home',
+      tooltip: 'Laman awal',
     ),
     NavigationDestination(
       icon: Icon(Icons.search, size: bottomIconSize),
       label: 'Explore',
+      tooltip: 'Pencarian',
     ),
     NavigationDestination(
       icon: Icon(Icons.messenger_outline_rounded, size: bottomIconSize),
       label: 'Direct Message',
+      tooltip: 'Pesan',
     ),
     NavigationDestination(
       icon: Icon(Icons.favorite_border, size: bottomIconSize),
       label: 'Notifications',
+      tooltip: 'Notifikasi',
     ),
     NavigationDestination(
       icon: Icon(Icons.account_circle_outlined, size: bottomIconSize),
       label: 'Profile',
+      tooltip: 'Profil',
     ),
   ];
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:insttergram/main.dart';
-import 'package:insttergram/routes/search.dart';
 import 'package:insttergram/widgets/bottom_bar.dart';
+import 'package:insttergram/widgets/search_bar.dart';
 
 class DMRoute extends StatelessWidget {
   const DMRoute({super.key});
@@ -61,7 +61,8 @@ class MessageTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: Icon(avatar, size: 60.0),
-      title: Text(username, style: TextStyle(fontWeight: FontWeight.bold)),
+      title: Text(username),
+      titleTextStyle: TextStyle(fontWeight: FontWeight.bold),
       subtitle: Text('Sent $readableTime ago'),
       trailing: Icon(Icons.camera_alt_outlined, size: 36.0),
     );

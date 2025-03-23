@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:insttergram/main.dart';
 import 'package:insttergram/widgets/bottom_bar.dart';
 
 class NotifRoute extends StatelessWidget {
